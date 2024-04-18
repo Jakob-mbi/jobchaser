@@ -1,6 +1,8 @@
 # React + Vite
 
 Deployed app https://jobchaser.vercel.app/ 
+obs!! jag har inte hunnit klart med projektet än
+
 ## Del 3
 
 - ### Vad menas med Reacts ekosystem? 
