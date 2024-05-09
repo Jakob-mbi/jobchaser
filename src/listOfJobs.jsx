@@ -1,18 +1,36 @@
-import { useRef, useState } from "react"
-import jobs from "./data"
+import { useEffect, useRef, useState } from "react"
 import CardList from "./CardList"
+
+
 
 function List(){
 
-    const [jobsData,setJobs]=useState(jobs)
+    const [jobsData,setJobs]=useState([])
     const inputRef = useRef()
+    useEffect(()=>{
+      fetchData()
+    },[])
 
     function onSubmit(e)
     {
         e.preventDefault()
         const value = inputRef.current.value
-        if(value=="") return setJobs(jobs)
-        setJobs(jobs.filter((j)=>j.position.toLocaleLowerCase().includes(value.toLocaleLowerCase())))
+        if(value=="") return fetchData()
+        setJobs(jobsData.filter((j)=>j.position.toLocaleLowerCase().includes(value.toLocaleLowerCase())))
+       
+    }
+
+    async function fetchData() {
+        try{
+            const response = await fetch("data.json");
+           const jobsListing = await response.json();
+            setJobs(jobsListing)
+           
+        }catch(error)
+        {
+            console.error(error.message)
+        }
+       
     }
 
     return(
