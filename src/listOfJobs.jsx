@@ -6,30 +6,33 @@ import CardList from "./CardList"
 function List(){
 
     const [jobsData,setJobs]=useState([])
+    const [ogList,setogList]=useState([])
     const inputRef = useRef()
+
     useEffect(()=>{
       fetchData()
     },[])
+
+    async function fetchData() {
+        try{
+            const response = await fetch("data.json");
+            const jobsListing = await response.json();
+            setJobs(jobsListing)
+            setogList(jobsListing)
+           
+        }catch(error)
+        {
+            console.error(error.message)
+        }
+       
+    }
 
     function onSubmit(e)
     {
         e.preventDefault()
         const value = inputRef.current.value
         if(value=="") return fetchData()
-        setJobs(jobsData.filter((j)=>j.position.toLocaleLowerCase().includes(value.toLocaleLowerCase())))
-       
-    }
-
-    async function fetchData() {
-        try{
-            const response = await fetch("data.json");
-           const jobsListing = await response.json();
-            setJobs(jobsListing)
-           
-        }catch(error)
-        {
-            console.error(error.message)
-        }
+        setJobs(ogList.filter((j)=>j.position.toLocaleLowerCase().includes(value.toLocaleLowerCase())))
        
     }
 
