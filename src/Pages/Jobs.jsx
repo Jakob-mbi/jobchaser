@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import CardList from "./CardList"
+import CardList from "../CardList"
 
 
 
@@ -15,7 +15,7 @@ function List(){
 
     async function fetchData() {
         try{
-            const response = await fetch("data.json");
+            const response = await fetch("http://localhost:8000/jobs");
             const jobsListing = await response.json();
             setJobs(jobsListing)
             setogList(jobsListing)
