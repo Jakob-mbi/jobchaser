@@ -38,7 +38,6 @@ function List(){
 
     return(
         <div className='mt-24 '>
-            <h1 className='mb-10 title flex justify-center'><img src="src\images\jobchase-high-resolution-logo-white-transparent.png" alt="Logo" className="card-img-top w-60"/></h1>
             <form className="input-group mb-12" onSubmit={onSubmit}>
                 <input type="text" className="form-control h-12" placeholder="Search" ref={inputRef} />
                 <button className="btn search-btn" type="submit" >
