@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import CardList from "../CardList"
+import CardList from "../Components/CardList"
 
 
 

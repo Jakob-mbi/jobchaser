@@ -1,5 +1,5 @@
 {
-  "jobs":[
+  "jobs": [
     {
       "id": 1,
       "company": "Photosnap",
@@ -10,7 +10,11 @@
       "postedAt": "1d ago",
       "contract": "Full Time",
       "location": "USA Only",
-      "languages": ["HTML", "CSS", "JavaScript"],
+      "languages": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
       "tools": []
     },
     {
@@ -23,8 +27,12 @@
       "postedAt": "1d ago",
       "contract": "Part Time",
       "location": "Remote",
-      "languages": ["Python"],
-      "tools": ["React"]
+      "languages": [
+        "Python"
+      ],
+      "tools": [
+        "React"
+      ]
     },
     {
       "id": 3,
@@ -36,8 +44,13 @@
       "postedAt": "2d ago",
       "contract": "Part Time",
       "location": "USA Only",
-      "languages": ["JavaScript"],
-      "tools": ["React", "Sass"]
+      "languages": [
+        "JavaScript"
+      ],
+      "tools": [
+        "React",
+        "Sass"
+      ]
     },
     {
       "id": 4,
@@ -49,12 +62,15 @@
       "postedAt": "5d ago",
       "contract": "Contract",
       "location": "USA Only",
-      "languages": ["CSS", "JavaScript"],
+      "languages": [
+        "CSS",
+        "JavaScript"
+      ],
       "tools": []
     },
     {
-        "id": 5,
-        "company": "Loop Studios",
+      "id": 5,
+      "company": "Loop Studios",
       "logo": "./src/images/loop-studios.svg",
       "position": "Software Engineer",
       "role": "Fullstack",
@@ -62,12 +78,17 @@
       "postedAt": "1w ago",
       "contract": "Full Time",
       "location": "Worldwide",
-      "languages": ["JavaScript", "Ruby"],
-      "tools": ["Sass"]
+      "languages": [
+        "JavaScript",
+        "Ruby"
+      ],
+      "tools": [
+        "Sass"
+      ]
     },
     {
-        "id": 6,
-        "company": "FaceIt",
+      "id": 6,
+      "company": "FaceIt",
       "logo": "./src/images/faceit.svg",
       "position": "Junior Backend Developer",
       "role": "Backend",
@@ -75,12 +96,16 @@
       "postedAt": "2w ago",
       "contract": "Full Time",
       "location": "UK Only",
-      "languages": ["Ruby"],
-      "tools": ["RoR"]
+      "languages": [
+        "Ruby"
+      ],
+      "tools": [
+        "RoR"
+      ]
     },
     {
-        "id": 7,
-        "company": "Shortly",
+      "id": 7,
+      "company": "Shortly",
       "logo": "./src/images/shortly.svg",
       "position": "Junior Developer",
       "role": "Frontend",
@@ -88,12 +113,17 @@
       "postedAt": "2w ago",
       "contract": "Full Time",
       "location": "Worldwide",
-      "languages": ["HTML", "JavaScript"],
-      "tools": ["Sass"]
+      "languages": [
+        "HTML",
+        "JavaScript"
+      ],
+      "tools": [
+        "Sass"
+      ]
     },
     {
-        "id": 8,
-        "company": "Insure",
+      "id": 8,
+      "company": "Insure",
       "logo": "./src/images/insure.svg",
       "position": "Junior Frontend Developer",
       "role": "Frontend",
@@ -101,12 +131,17 @@
       "postedAt": "2w ago",
       "contract": "Full Time",
       "location": "USA Only",
-      "languages": ["JavaScript"],
-      "tools": ["Vue", "Sass"]
+      "languages": [
+        "JavaScript"
+      ],
+      "tools": [
+        "Vue",
+        "Sass"
+      ]
     },
     {
-        "id": 9,
-        "company": "Eyecam Co.",
+      "id": 9,
+      "company": "Eyecam Co.",
       "logo": "./src/images/eyecam-co.svg",
       "position": "Full Stack Engineer",
       "role": "Fullstack",
@@ -114,12 +149,17 @@
       "postedAt": "3w ago",
       "contract": "Full Time",
       "location": "Worldwide",
-      "languages": ["JavaScript", "Python"],
-      "tools": ["Django"]
+      "languages": [
+        "JavaScript",
+        "Python"
+      ],
+      "tools": [
+        "Django"
+      ]
     },
     {
-        "id": 10,
-        "company": "The Air Filter Company",
+      "id": 10,
+      "company": "The Air Filter Company",
       "logo": "./src/images/the-air-filter-company.svg",
       "position": "Front-end Dev",
       "role": "Frontend",
@@ -127,8 +167,30 @@
       "postedAt": "1mo ago",
       "contract": "Part Time",
       "location": "Worldwide",
-      "languages": ["JavaScript"],
-      "tools": ["React", "Sass"]
+      "languages": [
+        "JavaScript"
+      ],
+      "tools": [
+        "React",
+        "Sass"
+      ]
+    }
+  ],
+  "user": [
+    {
+      "id": "20da",
+      "user": "Test1@hej.com",
+      "pwd": "Test1"
+    },
+    {
+      "id": "2815",
+      "user": "eliasburhan0@gmail.com",
+      "pwd": "es1"
+    },
+    {
+      "id": "0406",
+      "user": "test1@xn--hejpdej-hxa.com",
+      "pwd": "test1"
     }
   ]
 }

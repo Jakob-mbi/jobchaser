@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom"
+import {useContext} from "react"
+import { Context } from "../App"
 
 function Navbar()
 {
+    const [isSignIn, setIsSignIn] = useContext(Context);
+
     return(
         <nav className="bg-white border-gray-200 dark:bg-gray-900 rounded-b-lg">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -17,12 +21,23 @@ function Navbar()
                 </button>
                 <div className="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul className="font-medium flex flex-col p-4 md:p-0 mt-4   bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white ">
+                {isSignIn?
                 <li>
-                    <Link href="#" className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Log in</Link>
+                <button className="bg-transparent hover:bg-purple-500 text-purple-700 font-semibold hover:text-gray-900 py-2 px-4 border border-blue-500 hover:border-transparent rounded" 
+                 onClick={()=>setIsSignIn(false)}>Sign Out</button>
+                </li>  
+                
+                :<>
+                    <li>
+                    <Link to="signin" className=" bg-purple-900 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Log in</Link>
                     </li>
                     <li>
-                    <Link to="signup" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-gray-900 py-2 px-4 border border-blue-500 hover:border-transparent rounded">Sign up</Link>
+                    <Link to="signup" className="bg-transparent hover:bg-purple-500 text-purple-700 font-semibold hover:text-gray-900 py-2 px-4 border border-blue-500 hover:border-transparent rounded">Sign up</Link>
                     </li>
+                </>
+                
+                }
+                    
                     
                 </ul>
                 </div>
