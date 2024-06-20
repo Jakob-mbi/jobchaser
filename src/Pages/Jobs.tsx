@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react"
+import { post } from "../Components/types"
 import CardList from "../Components/CardList"
 
 
 
 function List(){
 
-    const [jobsData,setJobs]=useState([])
-    const [ogList,setogList]=useState([])
-    const inputRef = useRef()
+    const [jobsData,setJobs]=useState<Array<post>>([])
+    const [ogList,setogList]=useState<Array<post>>([])
+    const inputRef = useRef<any>()
 
     useEffect(()=>{
       fetchData()
@@ -22,15 +23,15 @@ function List(){
            
         }catch(error)
         {
-            console.error(error.message)
+            console.error(error)
         }
        
     }
 
-    function onSubmit(e)
+    function onSubmit(e:any)
     {
         e.preventDefault()
-        const value = inputRef.current.value
+        const value = inputRef.current?.value
         if(value=="") return fetchData()
         setJobs(ogList.filter((j)=>j.position.toLocaleLowerCase().includes(value.toLocaleLowerCase())))
        

@@ -1,17 +1,20 @@
 import { Route, Routes } from 'react-router-dom'
-import React,{useState,useRef} from 'react'
+import React,{useState,useRef, RefObject} from 'react'
+import { contextType } from './Components/types'
+
 import List from './Pages/Jobs'
 import Signin from './Pages/signin'
-import Signup from './Pages/signup'
+import SignUp from './Pages/signup'
 import Navbar from './Components/Navbar'
 
-export const Context = React.createContext();
+export const Context = React.createContext<contextType| null>(null);
+
 
 function App() {
   
-  const [isSignIn, setIsSignIn] = useState(false)
-  const isLoggedInRef = useRef(false);
-  isLoggedInRef.current = isSignIn
+  const [isSignIn, setIsSignIn] = useState<boolean>(false)
+  const isLoggedInRef = useRef<boolean>(false);
+  isLoggedInRef.current = isSignIn;
 
   
 
@@ -22,7 +25,7 @@ function App() {
       <Routes>
         <Route path='/' element={<List/>}/>
         <Route path='jobs' element={<List/>}/>
-        <Route path='signup' element={<Signup/>}/>
+        <Route path='signup' element={<SignUp/>}/>
         <Route path='signin' element={<Signin/>}/>
       </Routes>
     </Context.Provider>

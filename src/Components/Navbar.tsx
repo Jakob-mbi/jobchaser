@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom"
 import {useContext} from "react"
 import { Context } from "../App"
+import { contextType } from "./types";
 
 function Navbar()
 {
-    const {isLoggedInRef, setIsSignIn} = useContext(Context);
+    const context = useContext<contextType|null>(Context);
     function signOut()
     {
         sessionStorage.clear()
-        setIsSignIn(false)
+        context?.setIsSignIn(false)
     }
 
     return(
@@ -26,7 +27,7 @@ function Navbar()
                 </button>
                 <div className="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul className="font-medium flex flex-col p-4 md:p-0 mt-4   bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white ">
-                {isLoggedInRef.current?
+                {context?.isLoggedInRef.current?
                 <li>
                 <button className="bg-transparent hover:bg-purple-500 text-purple-700 font-semibold hover:text-gray-900 py-2 px-4 border border-blue-500 hover:border-transparent rounded" 
                  onClick={signOut}>Sign Out</button>

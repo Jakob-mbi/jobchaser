@@ -1,7 +1,9 @@
-function CardList({jobsList})
+import { post } from "./types"
+
+function CardList({jobsList}:{jobsList:Array<post>})
 {
     return(
-        jobsList.map((job,index)=>
+        jobsList.map((job:post,index:number)=>
             <div key={index} className="card d-flex flex-row mx-4">
                 <img src={`${job.logo}`} alt="Logo" className="card-img-top w-36 h-36"/>
                 <div className="card-body">

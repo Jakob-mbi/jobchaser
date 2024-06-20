@@ -1,19 +1,20 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { inputTypes  } from "../Components/types";
 const SIGNUP_URL = 'http://localhost:8000/user';
 
 
 
 function SignUp() {
     const navigate = useNavigate();
-    const form = useForm();
+    const form = useForm<inputTypes>();
     const { register, handleSubmit, formState, watch } = form;
-    const { errors } = formState;
-    const onSubmit = async (data) => {
+    const { errors} = formState;
+    const onSubmit = async (data:inputTypes) => {
         const user = data.email.toLowerCase();
-        const firstName = data.firstName;
-        const lastName = data.lastName;
+        const firstName = data.firstname;
+        const lastName = data.lastname;
         const pwd = data.password;
         try {
             const response = await fetch(SIGNUP_URL,{
@@ -28,7 +29,7 @@ function SignUp() {
             alert("You have successfully registered")
             navigate(`/`)
         } catch (error) {
-            console.error(error.message)
+            console.error(error)
         }
         
     };
@@ -46,7 +47,7 @@ function SignUp() {
                             First Name*
                         </label>
                         <input className="appearance-none block w-full bg-gray-200 text-black border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                               id="firstname" name="firstname" type="text"  {...register("firstname", { required: 'Firstname is required' })}/>
+                               id="firstname"  type="text"  {...register("firstname", { required: 'Firstname is required' })}/>
                         <p className="text-rose-300">{errors.firstname?.message}</p>
                     </div>
                     <div className="w-full md:w-1/2 px-3">
@@ -54,7 +55,7 @@ function SignUp() {
                             Last Name*
                         </label>
                         <input className="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                               id="lastname" name="lastname" type="text"  {...register("lastname", { required: 'Lastname is required' })}/>
+                               id="lastname"  type="text"  {...register("lastname", { required: 'Lastname is required' })}/>
                         <p className="text-rose-300">{errors.lastname?.message}</p>
                     </div>
                 </div>
@@ -64,7 +65,7 @@ function SignUp() {
                             Email*
                         </label>
                         <input className="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                               id="email" name="email" type="email" 
+                               id="email"  type="email" 
                                {...register("email", {
                                    required: 'Email is required',
                                    pattern: {
@@ -79,7 +80,7 @@ function SignUp() {
                             Password*
                         </label>
                         <input className="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                               id="password" name="password" type="password"  {...register("password", { required: 'Password is required' })}/>
+                               id="password"  type="password"  {...register("password", { required: 'Password is required' })}/>
                         <p className="text-rose-300">{errors.password?.message}</p>
                     </div>
                     <div className="w-full px-3">
@@ -87,7 +88,7 @@ function SignUp() {
                             Confirm Password*
                         </label>
                         <input className="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                               id="password2" name="password2" type="password" 
+                               id="password2"  type="password" 
                                {...register("password2", {
                                    required: 'Password confirmation is needed',
                                    validate: (fieldValue) => {
