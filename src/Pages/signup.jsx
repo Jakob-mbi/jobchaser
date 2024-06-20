@@ -11,7 +11,6 @@ function SignUp() {
     const { register, handleSubmit, formState, watch } = form;
     const { errors } = formState;
     const onSubmit = async (data) => {
-        console.log('Form submitted', data);
         const user = data.email.toLowerCase();
         const firstName = data.firstName;
         const lastName = data.lastName;

@@ -10,6 +10,11 @@ export const Context = React.createContext();
 function App() {
   
   const [isSignIn, setIsSignIn] = useState(false)
+  // useEffect(() => {
+  //   sessionStorage.getItem("currentUser")?? setIsSignIn(true)
+  // }, [isSignIn]);
+
+  
 
   return (
   
