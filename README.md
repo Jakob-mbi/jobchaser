@@ -1,6 +1,9 @@
 # React + Vite
+- Instruktioner för att starta applicationen 
 
-Deployed app https://jobchaser.vercel.app/ 
+1. Skriv i terminal:  npm run dev 
+
+2. starta upp en ny terminal för att starta json server, skriv: npm run server
 
 ## Del 4
 

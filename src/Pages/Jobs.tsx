@@ -1,14 +1,20 @@
 import { useEffect, useRef, useState } from "react"
 import { post } from "../Components/types"
 import CardList from "../Components/CardList"
+import { useDispatch, useSelector} from "react-redux"
+import{inputWord} from "../State/Search";
+import { RootState } from "../State/store";
 
 
 
 function List(){
 
+    const dispatch = useDispatch();
     const [jobsData,setJobs]=useState<Array<post>>([])
     const [ogList,setogList]=useState<Array<post>>([])
     const inputRef = useRef<any>()
+    const value = useSelector((state:RootState)=>state.serchWord.word)
+ 
 
     useEffect(()=>{
       fetchData()
@@ -31,9 +37,10 @@ function List(){
     function onSubmit(e:any)
     {
         e.preventDefault()
-        const value = inputRef.current?.value
+        dispatch(inputWord(inputRef.current?.value))
         if(value=="") return fetchData()
-        setJobs(ogList.filter((j)=>j.position.toLocaleLowerCase().includes(value.toLocaleLowerCase())))
+        setJobs(ogList.filter((j)=>
+        j.position.toLocaleLowerCase().includes(value.toLocaleLowerCase())))
        
     }
 
