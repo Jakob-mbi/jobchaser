@@ -1,7 +1,35 @@
 # React + Vite
 
 Deployed app https://jobchaser.vercel.app/ 
-obs!! jag har inte hunnit klart med projektet än
+
+## Del 4
+
+-  #### Vad är Redux Toolkit? 
+
+    Redux Toolkit är ett paket från Redux-teamet som är designat för att göra det enklare att använda Redux. Det inkluderar en olika hjälpverktyg och funktioner som standardiserar och förenklar arbetsflödet för att skapa och hantera bland annat state i en applikation. 
+
+- #### När, i vilka situationer vill man använda Redux Toolkit?
+
+    1. Komplexa state-hanteringar: När din applikation har ett komplext globalt state som behöver hanteras på ett organiserat och skalbart sätt.
+
+    2. Minskad Boilerplate-kod: När man vill minska mängden boilerplate-kod som vanlig Redux-implementation ofta kräver.
+
+    3. Asynkrona åtgärder: När man behöver hantera saker asynkront (som API-anrop) och vill om man använda en standardiserad metod för detta.
+
+ - #### Beskriv typiska områden hur man använder Typescript i React? (ex props, event, useReducer, etc)
+
+    1. Props: TypeScript används för att typdefiniera props som skickas till komponenter. Detta säkerställer 
+    att komponenterna får rätt typer av   data  och underlättar felsökning och dokumentation.
+
+    2. State: TypeScript används för att typdefiniera lokalt state i funktionella komponenter med hjälp av useState.
+
+    3. Events: TypeScript används för att typdefiniera eventobjekt i eventhanterare.
+
+    4. useReducer: TypeScript används för att typdefiniera actions och state i reducer-funktioner.
+
+    5. Custom Hooks: TypeScript används för att skapa typdefinierade custom hooks som kan återanvändas i flera komponenter.
+
+
 
 ## Del 3
 
