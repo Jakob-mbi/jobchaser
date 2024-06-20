@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import React,{useState} from 'react'
+import React,{useState,useRef} from 'react'
 import List from './Pages/Jobs'
 import Signin from './Pages/signin'
 import Signup from './Pages/signup'
@@ -10,15 +10,14 @@ export const Context = React.createContext();
 function App() {
   
   const [isSignIn, setIsSignIn] = useState(false)
-  // useEffect(() => {
-  //   sessionStorage.getItem("currentUser")?? setIsSignIn(true)
-  // }, [isSignIn]);
+  const isLoggedInRef = useRef(false);
+  isLoggedInRef.current = isSignIn
 
   
 
   return (
   
-    <Context.Provider value={[isSignIn, setIsSignIn]}>
+    <Context.Provider value={{isLoggedInRef, setIsSignIn}}>
       <Navbar/>
       <Routes>
         <Route path='/' element={<List/>}/>

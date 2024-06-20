@@ -4,7 +4,12 @@ import { Context } from "../App"
 
 function Navbar()
 {
-    const [isSignIn, setIsSignIn] = useContext(Context);
+    const {isLoggedInRef, setIsSignIn} = useContext(Context);
+    function signOut()
+    {
+        sessionStorage.clear()
+        setIsSignIn(false)
+    }
 
     return(
         <nav className="bg-white border-gray-200 dark:bg-gray-900 rounded-b-lg">
@@ -21,10 +26,10 @@ function Navbar()
                 </button>
                 <div className="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul className="font-medium flex flex-col p-4 md:p-0 mt-4   bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white ">
-                {isSignIn?
+                {isLoggedInRef.current?
                 <li>
                 <button className="bg-transparent hover:bg-purple-500 text-purple-700 font-semibold hover:text-gray-900 py-2 px-4 border border-blue-500 hover:border-transparent rounded" 
-                 onClick={()=>setIsSignIn(false)}>Sign Out</button>
+                 onClick={signOut}>Sign Out</button>
                 </li>  
                 
                 :<>
